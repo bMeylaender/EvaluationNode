@@ -2,8 +2,8 @@ const { artist } = require("../config/prisma-client");
 const albumRepository = require("../repositories/album.repository");
 const artisteService = require("../services/artiste.service");
 
-const fetchAllAlbums = async () => {
-  const albums = await albumRepository.findAllAlbums();
+const fetchAllAlbums = async (search) => {
+  const albums = await albumRepository.findAllAlbums(search);
 
   if (albums.length <= 0) {
     throw {

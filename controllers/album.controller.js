@@ -2,7 +2,8 @@ const albumService = require("../services/album.service");
 
 const fetchAllAlbums = async (req, res, next) => {
   try {
-    const albums = await albumService.fetchAllAlbums();
+    const { search } = req.query;
+    const albums = await albumService.fetchAllAlbums(search);
 
     res.status(200).json(albums);
   } catch (error) {

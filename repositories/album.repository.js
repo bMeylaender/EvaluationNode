@@ -1,7 +1,12 @@
 const prisma = require("../config/prisma-client");
 
-const findAllAlbums = async () => {
+const findAllAlbums = async (search) => {
   const albums = await prisma.album.findMany({
+    where: {
+      title: {
+        contains: search,
+      },
+    },
     include: {
       artist: true,
     },
