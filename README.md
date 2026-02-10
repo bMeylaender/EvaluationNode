@@ -89,6 +89,8 @@ PUT    /albums/:id       →  Modifier un album (authentifié)
 DELETE /albums/:id       →  Supprimer un album (admin)
 ```
 
+On peut ajouter un paramètre `?search=` dans le `GET /albums` pour pouvoir les albums : seul les albums ayant un titre contenant la chaîne de caractère du filtre seront affichés.
+
 Pour la gestion des playlists :
 
 ```

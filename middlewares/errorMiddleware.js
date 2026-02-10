@@ -1,7 +1,4 @@
 const errorMiddleware = (err, req, res, next) => {
-  console.error("=== ERREUR NON GÉRÉE ===");
-  console.error(err);
-
   if (err.status) {
     return res.status(err.status).json(err);
   }
